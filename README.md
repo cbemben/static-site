@@ -2,7 +2,7 @@
 Using nginx on Linux to host a static website.
 Primary guidance came from [nginx article here](https://jgefroh.medium.com/a-guide-to-using-nginx-for-static-websites-d96a9d034940)
 
-<website-descriptor> is used here to represent your directory name that contains assets for a specific website, something like `my-cool-python-package-docs`. 
+`<website-descriptor>` is used here to represent your directory name that contains assets for a specific website, something like `my-cool-python-package-docs`. 
 
 ### installing nginx on Linux
   - sudo apt-get update                #updates all packages
@@ -15,6 +15,11 @@ sudo systemctl start nginx
 sudo systemctl stop nginx
 sudo systemctl restart nginx
 sudo systemctl status nginx
+```
+
+View active ports on machine
+```bash
+sudo lsof -i -P -n | grep LISTEN
 ```
   
 ## source directories
@@ -34,7 +39,7 @@ Connect the static website assets to nginx so the site can be exposed via ports 
 ```bash
 cd /etc/nginx/sites-available
 touch <website-descriptor>
-nano <website-descripto>
+nano <website-descriptor>
 ```
 
 add config details
